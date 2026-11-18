@@ -35,7 +35,7 @@ Each tag is a multi-architecture image for **linux/amd64** and **linux/arm64**; 
 **Use the tag of the library version your application references.** There is no `latest` tag. When an engine
 does not speak the protocol of the library calling it, the conversion fails with a message saying so.
 
-The image is published as `ghcr.io/expertpdf/engine` and mirrored on Docker Hub as `expertpdf/engine`. Chromium
+The image is published as `ghcr.io/expertpdf-components/engine` and mirrored on Docker Hub as `expertpdf/engine`. Chromium
 154.0.28.
 
 ## Quick start
@@ -48,7 +48,7 @@ export EXPERTPDF_ENGINE_TOKEN="$(openssl rand -base64 32)"
 docker run -d --name expertpdf-engine -p 8080:8080 \
   --read-only --tmpfs /tmp \
   -e EXPERTPDF_ENGINE_TOKEN \
-  ghcr.io/expertpdf/engine:22.0
+  ghcr.io/expertpdf-components/engine:22.0
 ```
 
 The engine reports healthy once it has done a first conversion, shortly after it starts:
@@ -147,7 +147,7 @@ Name the engine service `expertpdf-engine` and the application needs no endpoint
 ```yaml
 services:
   expertpdf-engine:
-    image: ghcr.io/expertpdf/engine:22.0
+    image: ghcr.io/expertpdf-components/engine:22.0
     read_only: true
     tmpfs:
       - /tmp
@@ -197,7 +197,7 @@ spec:
     spec:
       containers:
         - name: engine
-          image: ghcr.io/expertpdf/engine:22.0
+          image: ghcr.io/expertpdf-components/engine:22.0
           ports:
             - containerPort: 8080
           env:
