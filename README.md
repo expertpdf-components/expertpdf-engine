@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://www.html-to-pdf.net/">
+    <img src="https://raw.githubusercontent.com/expertpdf-components/expertpdf-engine/main/images/expertpdf-logo-1024-light.jpg" alt="ExpertPdf" height="96">
+  </a>
+</p>
+
 # ExpertPdf engine
 
 The native conversion engines of **ExpertPdf Anywhere** as an HTTP service: the Chromium engine that converts
